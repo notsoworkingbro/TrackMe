@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect, flash
 
 app = Flask(__name__)
 
@@ -23,6 +23,19 @@ def about():
 @app.route('/forum')
 def forum():
     return render_template("forum.html")
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        message = request.form.get('message')
+
+        # You can handle the data here (save to file, send email, etc.)
+        flash('Thank you for reaching out!', 'success')
+        return redirect('/contact')
+
+    return render_template('contact.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

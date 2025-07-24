@@ -11,9 +11,13 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/global/footer.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/global/body.css') }}">
   
+  
   <!-- ===== Page Specific CSS (Optional) ===== -->
   {% block head %}
-  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/forum/forum.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/projects/projects.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contacts/contacts.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about/about.css') }}">
   {% endblock %}
   
 </head>

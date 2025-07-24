@@ -1,0 +1,83 @@
+/* ============================
+   CONTACT PAGE STYLESHEET
+   ============================
+   Description: Styles specifically for the Contact page.
+*/
+
+/* Root Variables - Reuse across themes */
+:root {
+  --bg-color: #1e1f22;
+  --text-color: #ffffff;
+  --accent-color: #5865f2; /* Discord-like blue */
+  --input-bg: #2b2d31;
+  --input-border: #444;
+  --input-focus: #5865f2;
+}
+
+/* Body Background */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === Container for Contact Section === */
+.contact-container {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: var(--input-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === Page Title === */
+.contact-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+/* === Form Elements === */
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input and Textarea */
+.contact-container input,
+.contact-container textarea {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+/* Input Focus */
+.contact-container input:focus,
+.contact-container textarea:focus {
+  outline: none;
+  border-color: var(--input-focus);
+}
+
+/* Submit Button */
+.contact-container button {
+  padding: 0.75rem;
+  border: none;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Submit Button Hover Effect */
+.contact-container button:hover {
+  background-color: #4752c4; /* slightly darker on hover */
+}
