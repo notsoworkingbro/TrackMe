@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - MySite{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/projects/projects.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="projects-container">
+  {% for image in project_images %}
+    <div class="project-box">
+      <img src="{{ url_for('static', filename='images/projects/' + image) }}" alt="{{ image }}">
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,54 @@
+/* ===== Root Variables for Discord Theme ===== */
+:root {
+  --navbar-bg: #2b2d31;        /* Discord sidebar background */
+  --text-color: #ffffff;       /* White text */
+  --hover-color: #5865f2;      /* Discord blurple */
+  --nav-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Header Container ===== */
+header {
+  width: 100%;
+  background-color: var(--navbar-bg);
+  padding: 1rem 0;
+  box-shadow: 0 2px 6px var(--nav-shadow);
+}
+
+/* ===== Navbar Flex Container ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  color: var(--text-color);
+}
+
+/* ===== Site Title ===== */
+.nav-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* ===== Navbar Items List ===== */
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Navbar Links ===== */
+.nav-items li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color: var(--hover-color);
+}

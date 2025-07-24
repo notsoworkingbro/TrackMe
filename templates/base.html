@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Professional Portfolio Website">
+  <title>{% block title %}MySite{% endblock %}</title>
+
+  <!-- ===== Global Stylesheets ===== -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global/footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global/body.css') }}">
+  
+  <!-- ===== Page Specific CSS (Optional) ===== -->
+  {% block head %}
+  
+  {% endblock %}
+  
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-title">MySite</div>
+      <ul class="nav-items">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+         <li><a href="/forum">Forum</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-content">
+      <p>Connect with me:</p>
+      <div class="social-links">
+        <a href="#">Facebook</a> |
+        <a href="#">GitHub</a> |
+        <a href="#">LinkedIn</a> |
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
