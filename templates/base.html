@@ -32,10 +32,38 @@
         <li><a href="/projects">Projects</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
-         <li><a href="/forum">Forum</a></li>
+        <li><a href="/forum">Forum</a></li>
       </ul>
+
+      <div class="auth-buttons">
+        <a href="#" id="openLogin">Log In</a>
+        <a href="#" id="openSignup">Sign Up</a>
+      </div>
     </nav>
   </header>
+
+  <!-- ===== Log In Modal ===== -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-close="loginModal">&times;</span>
+      <h2>Log In</h2>
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button>Log In</button>
+    </div>
+  </div>
+
+  <!-- ===== Sign Up Modal ===== -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-close="signupModal">&times;</span>
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Username" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button>Sign Up</button>
+    </div>
+  </div>
 
   <!-- ===== MAIN CONTENT ===== -->
   <main>
@@ -58,4 +86,31 @@
   </footer>
 
 </body>
+
+<script>
+document.getElementById("openLogin").onclick = () => {
+  document.getElementById("loginModal").style.display = "block";
+};
+
+document.getElementById("openSignup").onclick = () => {
+  document.getElementById("signupModal").style.display = "block";
+};
+
+document.querySelectorAll(".close").forEach(closeBtn => {
+  closeBtn.onclick = () => {
+    document.getElementById(closeBtn.dataset.close).style.display = "none";
+  };
+});
+
+window.onclick = (event) => {
+  document.querySelectorAll(".modal").forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+};
+</script>
+
+
 </html>
+

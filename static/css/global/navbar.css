@@ -1,9 +1,11 @@
 /* ===== Root Variables for Discord Theme ===== */
 :root {
-  --navbar-bg: #2b2d31;        /* Discord sidebar background */
-  --text-color: #ffffff;       /* White text */
-  --hover-color: #5865f2;      /* Discord blurple */
-  --nav-shadow: rgba(0, 0, 0, 0.3);
+  --navbar-bg: #2b2d31;        /* Discord sidebar background color */
+  --text-color: #ffffff;       /* White text color */
+  --hover-color: #5865f2;      /* Discord blurple hover color */
+  --nav-shadow: rgba(0, 0, 0, 0.3); /* Navbar shadow */
+  --btn-bg: #5865f2;           /* Button background (blurple) */
+  --btn-hover: #4752c4;        /* Button hover (darker blurple) */
 }
 
 /* ===== Header Container ===== */
@@ -30,6 +32,7 @@ header {
   font-size: 1.8rem;
   font-weight: bold;
   color: var(--text-color);
+  text-decoration: none; /* If clickable */
 }
 
 /* ===== Navbar Items List ===== */
@@ -52,3 +55,92 @@ header {
 .nav-items li a:hover {
   color: var(--hover-color);
 }
+
+/* ===== Auth Buttons (Signup & Login) ===== */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-buttons a {
+  background-color: var(--btn-bg);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.auth-buttons a:hover {
+  background-color: var(--btn-hover);
+}
+
+/* ===== Modal Background Overlay ===== */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+}
+
+/* ===== Modal Content Box ===== */
+.modal-content {
+  background-color: var(--navbar-bg);
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 350px;
+  color: var(--text-color);
+  box-shadow: 0 0 10px var(--nav-shadow);
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== Modal Close Button ===== */
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--hover-color);
+}
+
+/* ===== Input Fields ===== */
+.modal-content input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0 1rem 0;
+  border: none;
+  border-radius: 5px;
+}
+
+/* ===== Submit Button ===== */
+.modal-content button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* ===== Fade-in Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
