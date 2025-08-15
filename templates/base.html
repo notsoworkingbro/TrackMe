@@ -47,9 +47,11 @@
     <div class="modal-content">
       <span class="close" data-close="loginModal">&times;</span>
       <h2>Log In</h2>
-      <input type="text" placeholder="Username" />
-      <input type="password" placeholder="Password" />
-      <button>Log In</button>
+      <form action="{{ url_for('login') }}" method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Log In</button>
+      </form>
     </div>
   </div>
 
@@ -58,10 +60,12 @@
     <div class="modal-content">
       <span class="close" data-close="signupModal">&times;</span>
       <h2>Sign Up</h2>
-      <input type="text" placeholder="Username" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button>Sign Up</button>
+      <form action="{{ url_for('signup') }}" method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+      </form>
     </div>
   </div>
 
@@ -87,29 +91,8 @@
 
 </body>
 
-<script>
-document.getElementById("openLogin").onclick = () => {
-  document.getElementById("loginModal").style.display = "block";
-};
+<script src="{{ url_for('static', filename='js/global/modal.js') }}"></script>
 
-document.getElementById("openSignup").onclick = () => {
-  document.getElementById("signupModal").style.display = "block";
-};
-
-document.querySelectorAll(".close").forEach(closeBtn => {
-  closeBtn.onclick = () => {
-    document.getElementById(closeBtn.dataset.close).style.display = "none";
-  };
-});
-
-window.onclick = (event) => {
-  document.querySelectorAll(".modal").forEach(modal => {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-};
-</script>
 
 
 </html>
