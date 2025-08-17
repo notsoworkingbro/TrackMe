@@ -11,11 +11,18 @@ from flask_login import (
 )  # User authentication management
 from werkzeug.security import generate_password_hash, check_password_hash
 
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
+
 # -------------------------
 # FLASK APP CONFIGURATION
 # -------------------------
 app = Flask(__name__)
-app.secret_key = "your_secret_key"  # Used for session encryption
+
+# Use secret key from environment
+app.secret_key = os.getenv("SECRET_KEY")  # Used for session encryption
 
 # -------------------------
 # DATABASE CONFIGURATION
