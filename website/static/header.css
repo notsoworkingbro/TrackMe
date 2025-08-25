@@ -1,0 +1,53 @@
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 200px; /* leave space for sidebar */
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    border-bottom: 2px solid var(--line-color);
+    background-color: var(--bg-color);
+    z-index: 1000;
+}
+
+/* Center search bar */
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Right section (login/signup) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Search bar */
+.search-bar {
+    width: 300px;
+    padding: 0.4rem;
+    border: 1px solid var(--line-color);
+    border-radius: 6px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--line-color);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color);
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--line-color);
+    color: var(--bg-color);
+}

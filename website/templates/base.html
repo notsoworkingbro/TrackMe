@@ -3,30 +3,47 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
     <title>{% block title %} Home {% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='globalcss/theme.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='globalcss/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <!-- base.html -->
+    <!-- Sidebar -->
     {% if show_navbar %}
-    <nav class="navbar">
-        <div class="nav-left">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-        </div>
+    <div class="sidebar">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </div>
 
-        <div class="nav-login">
-            <a href="{{ url_for('auth.login') }}" class="login-btn">Log In</a>
-            <a href="{{ url_for('auth.sign_up') }}" class="login-btn">Sign Up</a>
-        </div>
-    </nav>
+    <!-- Header -->
+    <header class="top-header">
+        <input type="text" class="search-bar" placeholder="Search...">
+        <a href="{{ url_for('auth.login') }}" class="login-btn">Log In</a>
+        <a href="{{ url_for('auth.sign_up') }}" class="login-btn">Sign Up</a>
+        <button class="btn" onclick="toggleTheme()">🌗</button>
+    </header>
     {% endif %}
 
     <!-- Page Content -->
-    <div class="content">
+    <div class="content" style="margin-left:200px; margin-top:60px; padding:1rem;">
         {% block content %}{% endblock %}
     </div>
+
+    <!-- Dark Mode Script -->
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.getAttribute("data-theme") === "dark") {
+                body.removeAttribute("data-theme");
+            } else {
+                body.setAttribute("data-theme", "dark");
+            }
+        }
+    </script>
 </body>
 </html>

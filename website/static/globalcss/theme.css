@@ -1,0 +1,20 @@
+:root {
+    /* Light Mode (Default) */
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --line-color: #f4a261; /* light orange */
+
+    /* Accent Colors */
+    --primary-color: #3498db;
+    --primary-hover: #2980b9;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f5f5f5;
+    --line-color: #f4a261; /* keep orange for contrast */
+}
